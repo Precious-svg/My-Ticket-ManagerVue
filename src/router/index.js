@@ -1,0 +1,45 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import MainLayout from '../layout/MainLayout.vue'
+import Dashboard from '../pages/Dashboard.vue'
+import AddTicket from '../pages/AddTicket.vue'
+import AllTickets from '../pages/AllTickets.vue'
+import Landing from '../pages/Landing.vue'
+import Login from '../pages/auth/Login.vue'
+import SignUp from '../pages/auth/SignUp.vue'
+const routes = [
+  { path: '/welcome', component: Landing },
+  { path: '/auth/login', component: Login },
+  { path: '/auth/signup', component: SignUp },
+
+  {
+    path: '/',
+    component: MainLayout,
+    children: [
+      { path: 'dashboard', component: Dashboard, meta: { requiresAuth: true } },
+      { path: 'all-tickets', component: AllTickets, meta: { requiresAuth: true } },
+      { path: 'add-ticket', component: AddTicket, meta: { requiresAuth: true } },
+      { path: 'add-ticket/:id', component: AddTicket, meta: { requiresAuth: true } },
+    ]
+  },
+
+  // Catch-all redirect
+  { path: '/:pathMatch(.*)*', redirect: '/welcome' }
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
+
+// Auth guard
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = !!localStorage.getItem('ticketapp_session')
+
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next('/auth/login')
+  } else {
+    next()
+  }
+})
+
+export default router
