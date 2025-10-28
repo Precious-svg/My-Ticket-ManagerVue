@@ -39,7 +39,7 @@
   <script setup>
   import { ref } from 'vue'
   import { useRouter } from 'vue-router'
-  import showToast from '../../assets/showToast' // keep your toast function
+  import { showToast } from '../../assets/showToast'
   
   const email = ref('')
   const password = ref('')

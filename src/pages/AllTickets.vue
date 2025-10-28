@@ -2,7 +2,7 @@
 import { ref, onMounted, watch } from "vue";
 import { useRouter } from "vue-router";
 import TicketCard from "../components/TicketCard.vue";
-import showToast from "../assets/showToast.js";
+import { showToast } from '../assets/showToast'
 import { fetchTickets, updateTicket, deleteTicket } from "../services/ticketService.js";
 
 const tickets = ref([]);

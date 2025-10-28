@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainLayout from '../layout/MainLayout.vue'
 import Dashboard from '../pages/Dashboard.vue'
-import AddTicket from '../pages/AddTicket.vue'
+import AddTickets from '../pages/AddTickets.vue'
 import AllTickets from '../pages/AllTickets.vue'
 import Landing from '../pages/Landing.vue'
 import Login from '../pages/auth/Login.vue'
@@ -17,8 +17,8 @@ const routes = [
     children: [
       { path: 'dashboard', component: Dashboard, meta: { requiresAuth: true } },
       { path: 'all-tickets', component: AllTickets, meta: { requiresAuth: true } },
-      { path: 'add-ticket', component: AddTicket, meta: { requiresAuth: true } },
-      { path: 'add-ticket/:id', component: AddTicket, meta: { requiresAuth: true } },
+      { path: 'add-ticket', component: AddTickets, meta: { requiresAuth: true } },
+      { path: 'add-ticket/:id', component: AddTickets, meta: { requiresAuth: true } },
     ]
   },
 

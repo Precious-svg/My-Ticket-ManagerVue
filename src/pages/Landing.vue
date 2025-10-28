@@ -2,6 +2,7 @@
 import { useRouter } from "vue-router";
 import Button from "../components/Button.vue";
 import Card from "../components/Card.vue";
+import heroWave from '../../../assests/hero-wave.svg'
 
 const router = useRouter();
 
@@ -53,17 +54,8 @@ const goToLogin = () => router.push("/auth/login");
       </section>
 
       <!-- SVG wave -->
-      <svg
-        class="absolute bottom-0 w-full aspect-[1440/320]"
-        viewBox="0 0 1440 320"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="#3b82f6"
-          fill-opacity="1"
-          d="M0,224L60,197.3C120,171,240,117,360,106.7C480,96,600,128,720,160C840,192,960,224,1080,224C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-        ></path>
-      </svg>
+      <img :src="heroWave"  alt="Hero Wave" class="absolute bottom-0 left-0 w-full"
+    />
     </main>
   </div>
 </template>

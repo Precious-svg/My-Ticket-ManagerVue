@@ -15,8 +15,7 @@
   import { useRoute, useRouter } from 'vue-router'
   import TicketForm from '../components/TicketForm.vue'
   import { createTicket, updateTicket, fetchOneTicket } from '../services/ticketService'
-  import showToast from '../assets/showToast'
-  
+  import { showToast } from '../assets/showToast'
   const route = useRoute()
   const router = useRouter()
   

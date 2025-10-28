@@ -75,7 +75,7 @@
   <script setup>
   import { ref } from 'vue'
   import { useRouter } from 'vue-router'
-  import showToast from '../../assets/showToast'
+  import { showToast } from '../../assets/showToast'
   
   const firstName = ref('')
   const lastName = ref('')
@@ -121,7 +121,4 @@
   }
   </script>
   
-  <style scoped>
-  /* optional custom styles */
-  </style>
   
