@@ -4,11 +4,11 @@ import Dashboard from '../pages/Dashboard.vue'
 import AddTickets from '../pages/AddTickets.vue'
 import AllTickets from '../pages/AllTickets.vue'
 import Landing from '../pages/Landing.vue'
-import Login from '../pages/auth/Login.vue'
+import LogIn from '../pages/auth/LogIn.vue'
 import SignUp from '../pages/auth/SignUp.vue'
 const routes = [
   { path: '/welcome', component: Landing },
-  { path: '/auth/login', component: Login },
+  { path: '/auth/login', component: LogIn },
   { path: '/auth/signup', component: SignUp },
 
   {
